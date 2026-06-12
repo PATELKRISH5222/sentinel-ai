@@ -36,7 +36,7 @@ function App() {
     const fetchData = async () => {
       try {
         const incidentsRes = await fetch(
-          "http://127.0.0.1:8000/incidents"
+          "https://sentinel-ai-backend-krish.onrender.com/incidents"
         );
         const incidentsData = await incidentsRes.json();
 
@@ -79,13 +79,13 @@ if (
 previousCount.current = incidentsData.length;
 
         const analyticsRes = await fetch(
-          "http://127.0.0.1:8000/analytics"
+          "https://sentinel-ai-backend-krish.onrender.com/analytics"
         );
         const analyticsData = await analyticsRes.json();
 
         setChartData(analyticsData);
         const typesRes = await fetch(
-  "http://127.0.0.1:8000/incident-types"
+  "https://sentinel-ai-backend-krish.onrender.com/incident-types"
 );
 
 const typesData = await typesRes.json();
@@ -116,7 +116,7 @@ const deleteIncident = async (id) => {
   try {
 
     await fetch(
-      `http://127.0.0.1:8000/incidents/${id}`,
+      `https://sentinel-ai-backend-krish.onrender.com/incidents/${id}`,
       {
         method: "DELETE",
       }
@@ -287,7 +287,7 @@ const deleteIncident = async (id) => {
   }}
 >
   <img
-    src="http://127.0.0.1:8000/video_feed"
+    /*src="http://127.0.0.1:8000/video_feed"*/
     alt="Live Feed"
     style={{
       width: "700px",
@@ -301,7 +301,7 @@ const deleteIncident = async (id) => {
         <button
           onClick={() =>
             window.open(
-              "http://127.0.0.1:8000/report",
+              "https://sentinel-ai-backend-krish.onrender.com/report",
               "_blank"
             )
           }
@@ -319,7 +319,7 @@ const deleteIncident = async (id) => {
         <button
   onClick={() =>
     window.open(
-      "http://127.0.0.1:8000/export-csv",
+      "https://sentinel-ai-backend-krish.onrender.com/export-csv",
       "_blank"
     )
   }
@@ -520,11 +520,11 @@ const deleteIncident = async (id) => {
   }}
 >
   <img
-    src={`http://127.0.0.1:8000/incidents_images/${incident.image}`}
+    src={`https://sentinel-ai-backend-krish.onrender.com/incidents_images/${incident.image}`}
     alt="incident"
     onClick={() =>
       setSelectedImage(
-        `http://127.0.0.1:8000/incidents_images/${incident.image}`
+        `https://sentinel-ai-backend-krish.onrender.com/incidents_images/${incident.image}`
       )
     }
     style={{
