@@ -20,8 +20,9 @@ from reportlab.lib.styles import (
     getSampleStyleSheet
 )
 
-from database import SessionLocal
+from database import SessionLocal, engine, Base
 from models import Incident
+Base.metadata.create_all(bind=engine)
 from collections import Counter
 model = YOLO("yolov8n.pt")
 app = FastAPI()
