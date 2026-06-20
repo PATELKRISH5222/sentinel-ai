@@ -86,10 +86,7 @@ def get_incidents():
     "type": incident.incident_type,
     "confidence": incident.confidence,
 
-    "image": (
-        f"https://sentinel-ai-backend-krish.onrender.com/"
-        f"incidents_images/{image_name}"
-    ),
+    "image": f"https://sentinel-ai-backend-krish.onrender.com/incidents_images/{image_name}",
 
     "timestamp": (
         incident.timestamp.strftime(
