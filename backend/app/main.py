@@ -28,9 +28,19 @@ model = YOLO("yolov8n.pt")
 app = FastAPI()
 
 # Images Folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+INCIDENTS_DIR = os.path.join(
+    BASE_DIR,
+    "..",
+    "..",
+    "ai-engine",
+    "incidents"
+)
+
 app.mount(
     "/incidents_images",
-    StaticFiles(directory="../../ai-engine/incidents"),
+    StaticFiles(directory=INCIDENTS_DIR),
     name="incidents_images"
 )
 
@@ -75,7 +85,12 @@ def get_incidents():
     "id": incident.id,
     "type": incident.incident_type,
     "confidence": incident.confidence,
-    "image": image_name,
+
+    "image": (
+        f"https://sentinel-ai-backend-krish.onrender.com/"
+        f"incidents_images/{image_name}"
+    ),
+
     "timestamp": (
         incident.timestamp.strftime(
             "%d-%m-%Y %H:%M:%S"
