@@ -237,11 +237,9 @@ def generate_frames():
 
 @app.get("/video_feed")
 def video_feed():
-
-    return StreamingResponse(
-        generate_frames(),
-        media_type="multipart/x-mixed-replace; boundary=frame"
-    )
+    return {
+        "message": "Live camera only available locally"
+    }
 
 
 @app.get("/export-csv")
