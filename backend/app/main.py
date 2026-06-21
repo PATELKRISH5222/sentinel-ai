@@ -90,31 +90,31 @@ def get_incidents():
 
     for incident in incidents:
 
-    image_name = os.path.basename(
-        incident.image_path
-    )
-
-    image_name = image_name.replace(
-        "incidents\\",
-        ""
-    ).replace(
-        "incidents/",
-        ""
-    )
-
-    data.append({
-        "id": incident.id,
-        "type": incident.incident_type,
-        "confidence": incident.confidence,
-        "image": f"https://sentinel-ai-backend-krish.onrender.com/incidents_images/{image_name}",
-        "timestamp": (
-            incident.timestamp.strftime(
-                "%d-%m-%Y %H:%M:%S"
-            )
-            if incident.timestamp
-            else ""
+        image_name = os.path.basename(
+            incident.image_path
         )
-    })
+
+        image_name = image_name.replace(
+            "incidents\\",
+            ""
+        ).replace(
+            "incidents/",
+            ""
+        )
+
+        data.append({
+            "id": incident.id,
+            "type": incident.incident_type,
+            "confidence": incident.confidence,
+            "image": f"https://sentinel-ai-backend-krish.onrender.com/incidents_images/{image_name}",
+            "timestamp": (
+                incident.timestamp.strftime(
+                    "%d-%m-%Y %H:%M:%S"
+                )
+                if incident.timestamp
+                else ""
+            )
+        })
 
     db.close()
 
