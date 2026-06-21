@@ -38,9 +38,22 @@ INCIDENTS_DIR = os.path.join(
     "incidents"
 )
 
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+
+INCIDENTS_DIR = os.path.abspath(
+    os.path.join(
+        BASE_DIR,
+        "../../ai-engine/incidents"
+    )
+)
+
 app.mount(
     "/incidents_images",
-    StaticFiles(directory=INCIDENTS_DIR),
+    StaticFiles(
+        directory=INCIDENTS_DIR
+    ),
     name="incidents_images"
 )
 
