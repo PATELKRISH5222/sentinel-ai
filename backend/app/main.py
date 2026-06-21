@@ -90,14 +90,16 @@ def get_incidents():
 
     for incident in incidents:
 
-        image_name = os.path.basename(
-            incident.image_path
-        )
-        image_name = image_name.replace(
-    "incidents/",
-    ""
+        image_name = (
+    incident.image_path
+    .replace("incidents\\", "")
+    .replace("incidents/", "")
 )
-        data.append({
+
+image_name = os.path.basename(
+    image_name
+)
+    data.append({
     "id": incident.id,
     "type": incident.incident_type,
     "confidence": incident.confidence,
