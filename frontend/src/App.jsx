@@ -520,12 +520,12 @@ const deleteIncident = async (id) => {
   }}
 >
   <img
-    src={`https://sentinel-ai-backend-krish.onrender.com/incidents_images/${incident.image}`}
+    src={incident.image}
     alt="incident"
     onClick={() =>
       setSelectedImage(
-        `https://sentinel-ai-backend-krish.onrender.com/incidents_images/${incident.image}`
-      )
+incident.image
+)
     }
     style={{
       width: "90px",
