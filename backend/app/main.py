@@ -93,7 +93,10 @@ def get_incidents():
         image_name = os.path.basename(
             incident.image_path
         )
-
+        image_name = image_name.replace(
+    "incidents/",
+    ""
+)
         data.append({
     "id": incident.id,
     "type": incident.incident_type,
