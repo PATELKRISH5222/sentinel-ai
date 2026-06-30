@@ -581,14 +581,17 @@ incident.image
 <img
   src={incident.image}
   alt="incident"
-  onClick={() => setSelectedImage(incident.image)}
   style={{
     width: "90px",
     height: "70px",
     objectFit: "cover",
-    borderRadius: "8px",
-    cursor: "pointer",
+    borderRadius: "8px"
   }}
+  onError={(e) => {
+    console.log("FAILED:", incident.image);
+    e.currentTarget.style.display = "none";
+  }}
+  onClick={() => setSelectedImage(incident.image)}
 />
   </div>
 )}
