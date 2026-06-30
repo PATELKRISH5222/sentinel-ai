@@ -578,24 +578,17 @@ incident.image
       zIndex: 9999,
     }}
   >
-    <img
+<img
   src={incident.image}
   alt="incident"
-  width="90"
-  height="70"
+  onClick={() => setSelectedImage(incident.image)}
   style={{
+    width: "90px",
+    height: "70px",
     objectFit: "cover",
     borderRadius: "8px",
-    cursor: "pointer"
+    cursor: "pointer",
   }}
-  onError={(e) => {
-    console.log("IMAGE FAILED:", incident.image);
-    e.target.src =
-      "https://via.placeholder.com/90x70?text=No+Image";
-  }}
-  onClick={() =>
-    setSelectedImage(incident.image)
-  }
 />
   </div>
 )}
