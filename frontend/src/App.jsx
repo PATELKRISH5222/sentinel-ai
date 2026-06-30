@@ -578,14 +578,15 @@ incident.image
       zIndex: 9999,
     }}
   >
-<td>
-  <img
-    src={incident.image}
-    alt="incident"
-    width="120"
-    height="90"
-  />
-</td>
+    <img
+      src={selectedImage}
+      alt="preview"
+      style={{
+        maxWidth: "90%",
+        maxHeight: "90%",
+        borderRadius: "12px",
+      }}
+    />
   </div>
 )}
     </div>
