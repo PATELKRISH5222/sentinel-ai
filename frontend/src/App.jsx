@@ -579,14 +579,24 @@ incident.image
     }}
   >
     <img
-      src={selectedImage}
-      alt="preview"
-      style={{
-        maxWidth: "80%",
-        maxHeight: "80%",
-        borderRadius: "12px",
-      }}
-    />
+  src={incident.image}
+  alt="incident"
+  width="90"
+  height="70"
+  style={{
+    objectFit: "cover",
+    borderRadius: "8px",
+    cursor: "pointer"
+  }}
+  onError={(e) => {
+    console.log("IMAGE FAILED:", incident.image);
+    e.target.src =
+      "https://via.placeholder.com/90x70?text=No+Image";
+  }}
+  onClick={() =>
+    setSelectedImage(incident.image)
+  }
+/>
   </div>
 )}
     </div>
