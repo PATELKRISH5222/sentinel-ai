@@ -578,21 +578,14 @@ incident.image
       zIndex: 9999,
     }}
   >
-<img
-  src={incident.image}
-  alt="incident"
-  style={{
-    width: "90px",
-    height: "70px",
-    objectFit: "cover",
-    borderRadius: "8px"
-  }}
-  onError={(e) => {
-    console.log("FAILED:", incident.image);
-    e.currentTarget.style.display = "none";
-  }}
-  onClick={() => setSelectedImage(incident.image)}
-/>
+<td>
+  <img
+    src={incident.image}
+    alt="incident"
+    width="120"
+    height="90"
+  />
+</td>
   </div>
 )}
     </div>
